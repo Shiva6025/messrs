@@ -24,10 +24,10 @@ function useReveal(delay = 0) {
 }
 
 export default function LabQuality() {
-  const headRef  = useReveal(0)
-  const textRef  = useReveal(100)
-  const mapRef1  = useReveal(0)
-  const mapRef2  = useReveal(120)
+  const headRef = useReveal(0)
+  const textRef = useReveal(100)
+  const mapRef1 = useReveal(0)
+  const mapRef2 = useReveal(120)
 
   return (
     <>
@@ -183,7 +183,7 @@ export default function LabQuality() {
                     e.target.src = "/assets/shutterstock_1772000003-2.jpg"
                   }}
                 />
-                
+
                 {/* Overlay gradient */}
                 <div style={{
                   position: 'absolute',
@@ -282,7 +282,7 @@ export default function LabQuality() {
             </p>
 
             <a
-              href="/infrastructure"
+              href="/quality-exports"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',

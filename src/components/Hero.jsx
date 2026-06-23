@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 const heroBg = '/assets/PHOTO-2023-11-29-17-14-40-e1706867387348.webp'
 const familyImg = '/assets/slide1-fam1.webp'
-const banLogo  = '/assets/ban-logo.webp'
+const banLogo = '/assets/ban-logo.webp'
 
 export default function Hero() {
   const textRef = useRef(null)
@@ -149,7 +149,7 @@ export default function Hero() {
             >
               Discover Our Impact
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
             <a
@@ -200,7 +200,7 @@ export default function Hero() {
             animation: 'float 10s ease-in-out infinite',
           }} />
 
-          <img
+          {/* <img
             src={familyImg}
             alt="Polisetty Family"
             className="animate-float"
@@ -211,7 +211,7 @@ export default function Hero() {
               zIndex: 1,
               filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.5))',
             }}
-          />
+          /> */}
 
           {/* Best Exporter badge */}
           <img
@@ -219,10 +219,10 @@ export default function Hero() {
             alt="Best Exporter Award – Non-manufacturer segment, 15 years"
             style={{
               position: 'absolute',
-              top: '0px',
-              right: '-10px',
-              width: '130px',
-              height: '130px',
+              top: '-19rem',
+              right: '6rem',
+              width: '150px',
+              height: '150px',
               objectFit: 'contain',
               zIndex: 2,
               animation: 'float 5s ease-in-out infinite',

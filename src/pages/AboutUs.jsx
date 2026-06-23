@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import StoryOfGrowth from '../components/StoryOfGrowth'
+import MeetOurTeam from '../components/MeetOurTeam'
+import BusinessExpansion from '../components/BusinessExpansion'
 
-const heroBg = '/assets/PHOTO-2023-11-29-17-14-40-e1706867387348.webp'
+const heroBg = '/assets/10262021000554n17-e1707828388753.jpg'
 const familyImg = '/assets/slide1-fam1.webp'
 const shyamSundar = '/assets/Sri-Polisetty-Shyam-Sundar.webp'
 const srihari = '/assets/Sri-Polisetty-Srihari-Prasada-Rao.webp'
@@ -73,23 +76,23 @@ const milestones = [
 const values = [
   {
     icon: '⚖️',
-    title: 'Integrity',
-    desc: 'Every transaction is built on honesty, transparency and a handshake worth more than paper.',
-  },
-  {
-    icon: '🌿',
-    title: 'Farmer First',
-    desc: 'We treat farmers as partners — fair pricing, timely payments, and genuine community investment.',
+    title: 'Ethical business practices',
+    desc: 'We prioritize transparency, integrity, and honesty in all our operations.',
   },
   {
     icon: '🏆',
-    title: 'Quality',
-    desc: 'Decades of expertise mean every leaf is graded with precision and traded at its true worth.',
+    title: 'High-quality standards',
+    desc: 'We aim for excellence in everything we do and always go the extra mile for our customers.',
   },
   {
-    icon: '🌍',
-    title: 'Sustainability',
-    desc: 'Responsible land stewardship and long-term ecological thinking guide every sourcing decision.',
+    icon: '💡',
+    title: 'Innovation',
+    desc: 'We strive to develop products that meet the changing needs and preferences of our customers.',
+  },
+  {
+    icon: '🤝',
+    title: 'People-focused',
+    desc: 'We believe in nurturing and rewarding our people, who are our biggest resource.',
   },
 ]
 
@@ -363,148 +366,158 @@ export default function AboutUs() {
     <div style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#faf7f2', minHeight: '100vh' }}>
       <Navbar />
 
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section style={{ position: 'relative', minHeight: '70vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        {/* BG */}
+      {/* ── HERO SECTION ──────────────────────────────────────── */}
+      <section style={{ position: 'relative', minHeight: '85vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+        {/* Background Image */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: `url(${heroBg})`,
           backgroundSize: 'cover', backgroundPosition: 'center top',
+          backgroundAttachment: 'fixed',
+          zIndex: 0
         }} />
-        {/* Overlays */}
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(40,47,129,0.92) 0%, rgba(61,44,30,0.75) 50%, rgba(0,0,0,0.6) 100%)' }} />
-        {/* Decorative rings */}
-        <div style={{ position: 'absolute', top: '20%', right: '10%', width: '350px', height: '350px', borderRadius: '50%', border: '1px solid rgba(218,121,39,0.2)', animation: 'float 8s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', top: '25%', right: '15%', width: '220px', height: '220px', borderRadius: '50%', border: '1px solid rgba(236,161,44,0.3)', animation: 'float 6s ease-in-out infinite reverse' }} />
 
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10, paddingTop: '80px', width: '100%' }}>
-          <div ref={heroTextRef} style={{ maxWidth: '700px' }}>
-            {/* Eyebrow */}
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              background: 'rgba(218,121,39,0.15)', border: '1px solid rgba(218,121,39,0.4)',
-              borderRadius: '50px', padding: '6px 16px', marginBottom: '1.5rem',
-            }}>
-              <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ECA12C', animation: 'pulse 2s ease-in-out infinite' }} />
-              <span style={{ color: '#ECA12C', fontSize: '0.75rem', letterSpacing: '0.15em', fontWeight: 600, textTransform: 'uppercase' }}>
-                Est. 1940 · 80+ Years of Excellence
-              </span>
-            </div>
+        {/* Dark Overlay (matching Infrastructure style) */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(135deg, rgba(10,10,30,0.88) 0%, rgba(40,47,129,0.7) 40%, rgba(0,0,0,0.55) 100%)',
+          zIndex: 1
+        }} />
+
+        {/* Decorative elements */}
+        <div style={{ position: 'absolute', top: '15%', left: '5%', width: '300px', height: '300px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(218,121,39,0.15) 0%, transparent 70%)', zIndex: 1 }} />
+        <div style={{ position: 'absolute', bottom: '10%', right: '15%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(236,161,44,0.1) 0%, transparent 70%)', zIndex: 1 }} />
+
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10, paddingTop: '100px', width: '100%' }}>
+          <div ref={heroTextRef} style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+
 
             <h1 style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              fontWeight: 900, color: '#fff', lineHeight: 1.1, marginBottom: '1.5rem',
+              fontSize: 'clamp(3.5rem, 7vw, 5rem)',
+              fontWeight: 900,
+              color: '#fff',
+              lineHeight: 1.1,
+              marginBottom: '1.5rem'
             }}>
-              Our Story, Our{' '}
+              Since{' '}
               <span style={{
-                background: 'linear-gradient(90deg, #DA7927, #ECA12C, #F1B415)',
+                background: 'linear-gradient(90deg, #DA7927, #ECA12C)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
               }}>
-                Legacy
+                1943
               </span>
             </h1>
 
-            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '560px' }}>
-              For more than eight decades, Messrs Polisetty Somasundaram & Sons has been a pillar of integrity in India's tobacco trade — built on trust, driven by quality, and deeply rooted in the communities we serve.
+            <div style={{
+              width: '100px',
+              height: '100px',
+              background: '#fff',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '10px',
+              marginBottom: '2rem',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+              border: '2px solid rgba(218,121,39,0.3)'
+            }}>
+              <img src="/assets/pol-logo.gif" alt="Polisetty Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            </div>
+
+            <p style={{
+              color: 'rgba(255,255,255,0.85)',
+              fontSize: '1.15rem',
+              lineHeight: 1.8,
+              maxWidth: '650px',
+              fontWeight: 400
+            }}>
+              Messrs Polisetty Somasundaram is one of the largest Tobacco Processors in India, starting as a trading and exporting business for Indian tobacco leaves. Our founder, Sri. Polisetty Somasundaram, established a solid foundation which set the base for our company’s success.
+            </p>
+          </div>
+        </div>
+
+        {/* Scroll down indicator */}
+        {/* <div style={{
+          position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
+          color: 'rgba(255,255,255,0.4)', fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', zIndex: 10
+        }}>
+          <span>Scroll</span>
+          <div style={{ width: '1px', height: '40px', background: 'linear-gradient(to bottom, rgba(218,121,39,0.8), transparent)', animation: 'float 2s ease-in-out infinite' }} />
+        </div> */}
+      </section>
+
+      {/* ── OVERVIEW ─────────────────────────────────────────── */}
+      <section style={{ padding: '6rem 0', background: '#fff', position: 'relative' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: 800,
+              color: '#1a1008',
+              marginBottom: '1.5rem'
+            }}>
+              Overview
+            </h2>
+            <p style={{
+              color: '#6b5a4a',
+              fontSize: '1.1rem',
+              lineHeight: 1.8,
+              marginBottom: '4rem'
+            }}>
+              With strong infrastructural support, we are among the largest tobacco exporters in India, consistently delivering high-quality products to our customers across the globe. We take great pride in offering the best products to our customers, who are situated in 56 different countries.
             </p>
 
-            {/* Stats row */}
-            <div style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap' }}>
+            {/* Stats Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '2rem',
+              marginBottom: '1rem',
+              padding: '2.5rem',
+              background: '#faf7f2',
+              borderRadius: '20px',
+              border: '1px solid rgba(218,121,39,0.15)'
+            }}>
               {[
-                { value: '22M+', label: 'KGs Traded' },
-                { value: '80+', label: 'Years Legacy' },
-                { value: '100+', label: 'Villages Served' },
-                { value: '3', label: 'Generations' },
-              ].map(s => (
-                <div key={s.label}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.75rem', fontWeight: 700, color: '#ECA12C' }}>{s.value}</div>
-                  <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{s.label}</div>
+                { value: '130+', label: 'Permanent Staff' },
+                { value: '600+', label: 'Seasonal Labour Force' },
+                { value: '13', label: 'Storage Warehouses' },
+                { value: '2', label: 'Processing Plants' }
+              ].map((stat, i) => (
+                <div key={i}>
+                  <div style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: '2.5rem',
+                    fontWeight: 800,
+                    color: '#DA7927',
+                    marginBottom: '0.5rem'
+                  }}>
+                    {stat.value}
+                  </div>
+                  <div style={{
+                    color: '#1a1008',
+                    fontSize: '0.85rem',
+                    fontWeight: 600,
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase'
+                  }}>
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
-        {/* Scroll cue */}
-        <div style={{
-          position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)',
-          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
-          color: 'rgba(255,255,255,0.4)', fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase',
-        }}>
-          <span>Scroll</span>
-          <div style={{ width: '1px', height: '40px', background: 'linear-gradient(to bottom, rgba(218,121,39,0.8), transparent)', animation: 'float 2s ease-in-out infinite' }} />
-        </div>
       </section>
 
       {/* ── OUR STORY ─────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 0', background: '#fff', position: 'relative' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(218,121,39,0.3), transparent)' }} />
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
-            {/* Text */}
-            <div
-              ref={storyRef}
-              style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.9s ease, transform 0.9s ease' }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.25rem' }}>
-                <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, transparent, #DA7927)' }} />
-                <span style={{ color: '#DA7927', fontSize: '0.75rem', letterSpacing: '0.2em', fontWeight: 600, textTransform: 'uppercase' }}>Our Story</span>
-              </div>
-              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#1a1008', lineHeight: 1.2, marginBottom: '1.5rem' }}>
-                From a Single Dream in{' '}
-                <span style={{ color: '#DA7927' }}>Guntur</span>
-              </h2>
-              <p style={{ color: '#6b5a4a', fontSize: '1rem', lineHeight: 1.85, marginBottom: '1.25rem' }}>
-                In 1940, Sri Polisetty Somasundaram began with a simple but powerful conviction: that farmers deserved fair prices and buyers deserved genuine quality. From a modest trading office in Guntur — the heart of India's tobacco belt — he built relationships that would span generations.
-              </p>
-              <p style={{ color: '#6b5a4a', fontSize: '1rem', lineHeight: 1.85, marginBottom: '1.25rem' }}>
-                His son, Sri P. Srihari Prasada Rao, expanded the firm's footprint across Andhra Pradesh and beyond, turning a local enterprise into one of India's most respected tobacco trading houses. Today, 22 million kilograms of premium leaf change hands each season under the banner of this storied family.
-              </p>
-              <p style={{ color: '#6b5a4a', fontSize: '1rem', lineHeight: 1.85 }}>
-                The third generation, led by Sri Polisetty Shyam Sundar, is now carrying that torch further — with a focus on sustainability, digital innovation, and global market presence, while staying true to the values that made the firm great.
-              </p>
-            </div>
-
-            {/* Family image */}
-            <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-              <div style={{
-                position: 'absolute', inset: '-30px',
-                background: 'radial-gradient(circle, rgba(218,121,39,0.2) 0%, transparent 70%)',
-                borderRadius: '50%', filter: 'blur(40px)',
-              }} />
-              <div style={{
-                borderRadius: '24px', overflow: 'hidden',
-                boxShadow: '0 30px 80px rgba(0,0,0,0.15)',
-                border: '3px solid rgba(218,121,39,0.25)',
-                position: 'relative', zIndex: 1,
-              }}>
-                <img
-                  src={familyImg}
-                  alt="Polisetty Family"
-                  style={{ width: '100%', maxHeight: '460px', objectFit: 'contain', display: 'block' }}
-                />
-              </div>
-              {/* Year badge */}
-              <div style={{
-                position: 'absolute', bottom: '-20px', left: '-20px',
-                background: 'linear-gradient(135deg, #282F81, #1a1008)',
-                borderRadius: '16px', padding: '1rem 1.5rem',
-                border: '1px solid rgba(218,121,39,0.3)',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
-                zIndex: 2,
-              }}>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '2rem', fontWeight: 800, color: '#ECA12C' }}>1940</div>
-                <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Est. in Guntur</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StoryOfGrowth />
 
       {/* ── TIMELINE ──────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 0', background: '#faf7f2', position: 'relative', overflow: 'hidden' }}>
-        {/* Decorative background text */}
+      {/* <section style={{ padding: '6rem 0', background: '#faf7f2', position: 'relative', overflow: 'hidden' }}>
         <div style={{
           position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
           fontFamily: "'Playfair Display', serif", fontSize: '20vw', fontWeight: 900,
@@ -514,7 +527,7 @@ export default function AboutUs() {
         </div>
 
         <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', position: 'relative' }}>
-          {/* Section header */}
+
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1rem' }}>
               <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, transparent, #DA7927)' }} />
@@ -527,25 +540,21 @@ export default function AboutUs() {
             </h2>
           </div>
 
-          {/* Vertical line */}
           <div style={{
             position: 'absolute', top: '13rem', bottom: '3rem', left: '50%',
             width: '2px', background: 'linear-gradient(to bottom, #DA7927, rgba(218,121,39,0.1))',
             transform: 'translateX(-50%)',
           }} />
 
-          {/* Milestone cards */}
           {milestones.map((m, i) => (
             <TimelineCard key={i} milestone={m} index={i} />
           ))}
         </div>
-      </section>
+      </section> */}
 
-      {/* ── VALUES ────────────────────────────────────────────── */}
       <section style={{ padding: '6rem 0', background: '#fff', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(218,121,39,0.3), transparent)' }} />
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          {/* Header */}
           <div
             ref={valuesRef}
             style={{ textAlign: 'center', marginBottom: '3.5rem', opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.9s ease, transform 0.9s ease' }}
@@ -571,7 +580,6 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Gold quote banner */}
         <div style={{
           marginTop: '4rem',
           background: 'linear-gradient(135deg, #282F81 0%, #1a1008 100%)',
@@ -586,37 +594,17 @@ export default function AboutUs() {
               We are a People-driven Organisation and hold trust in our team.
             </p>
             <div style={{ color: '#ECA12C', fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 600 }}>
-              — Sri P. Srihari Prasada Rao, Managing Director
+              — Sri Polisetty Somasundaram, Founder
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── LEADERSHIP ────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 0', background: '#faf7f2', position: 'relative' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div
-            ref={leaderRef}
-            style={{ textAlign: 'center', marginBottom: '3.5rem', opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.9s ease, transform 0.9s ease' }}
-          >
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1rem' }}>
-              <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, transparent, #DA7927)' }} />
-              <span style={{ color: '#DA7927', fontSize: '0.75rem', letterSpacing: '0.2em', fontWeight: 600, textTransform: 'uppercase' }}>The People Behind</span>
-              <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, #DA7927, transparent)' }} />
-            </div>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#1a1008', marginBottom: '1rem' }}>
-              Three Generations,{' '}
-              <span style={{ color: '#DA7927' }}>One Vision</span>
-            </h2>
-          </div>
+      {/* ── MEET OUR TEAM ──────────────────────────────────────── */}
+      <MeetOurTeam />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', alignItems: 'start' }}>
-            {leaders.map((l, i) => (
-              <LeaderCard key={i} leader={l} delay={i * 150} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── BUSINESS EXPANSION ─────────────────────────────────── */}
+      <BusinessExpansion />
 
       {/* ── CTA ───────────────────────────────────────────────── */}
       <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg, #DA7927, #ECA12C)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
@@ -633,10 +621,10 @@ export default function AboutUs() {
             Whether you're a buyer, a farmer, or an investor — we believe in building relationships that last generations. Let's start a conversation.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a
-              href="/#contact"
+            <button
+              onClick={() => window.dispatchEvent(new Event('open-contact-modal'))}
               style={{
-                background: '#fff', color: '#DA7927',
+                background: '#fff', color: '#DA7927', border: 'none', cursor: 'pointer', fontFamily: 'inherit',
                 padding: '0.875rem 2.25rem', borderRadius: '50px',
                 fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.05em',
                 textDecoration: 'none', boxShadow: '0 8px 30px rgba(0,0,0,0.15)',
@@ -646,7 +634,7 @@ export default function AboutUs() {
               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.15)' }}
             >
               Get in Touch
-            </a>
+            </button>
             <a
               href="/"
               style={{

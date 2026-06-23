@@ -8,7 +8,12 @@ export default function Navbar() {
   const location = useLocation()
   const isAbout = location.pathname === '/about'
   const isInfra = location.pathname === '/infrastructure'
-  const isSubPage = isAbout || isInfra
+  const isQuality = location.pathname === '/quality-exports'
+  const isInit = location.pathname === '/initiatives'
+  const isSust = location.pathname === '/sustainability'
+  const isBlogs = location.pathname === '/blogs'
+  const isPolicies = location.pathname === '/policies'
+  const isSubPage = isAbout || isInfra || isQuality || isInit || isSust || isBlogs || isPolicies
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -22,17 +27,19 @@ export default function Navbar() {
   const navLinks = [
     { label: 'About Us', href: '/about', isRoute: true },
     { label: 'Infrastructure', href: '/infrastructure', isRoute: true },
-    { label: 'Leadership', href: isSubPage ? '/#leadership' : '#leadership' },
-    { label: 'Impact', href: isSubPage ? '/#impact' : '#impact' },
-    { label: 'Contact', href: isSubPage ? '/#contact' : '#contact' },
+    { label: 'Quality & Exports', href: '/quality-exports', isRoute: true },
+    { label: 'Initiatives', href: '/initiatives', isRoute: true },
+    { label: 'Sustainability', href: '/sustainability', isRoute: true },
+    { label: 'Blogs', href: '/blogs', isRoute: true },
+    { label: 'Policies', href: '/policies', isRoute: true },
   ]
 
   const textDark = alwaysOpaque || scrolled
   const navBg = alwaysOpaque
     ? 'rgba(255, 251, 245, 0.97)'
     : scrolled
-    ? 'rgba(255, 251, 245, 0.95)'
-    : 'transparent'
+      ? 'rgba(255, 251, 245, 0.95)'
+      : 'transparent'
 
   return (
     <nav
@@ -130,26 +137,48 @@ export default function Navbar() {
                 </a>
               )
             })}
-            <a
-              href={isSubPage ? '/#contact' : '#contact'}
-              style={{
-                background: 'linear-gradient(135deg, #DA7927, #ECA12C)',
-                color: '#fff',
-                padding: '0.5rem 1.25rem',
-                borderRadius: '50px',
-                fontWeight: 600,
-                fontSize: '0.8rem',
-                letterSpacing: '0.08em',
-                textDecoration: 'none',
-                textTransform: 'uppercase',
-                transition: 'transform 0.2s, box-shadow 0.2s',
-                boxShadow: '0 4px 15px rgba(218,121,39,0.4)',
-              }}
-              onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 8px 25px rgba(218,121,39,0.5)' }}
-              onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 4px 15px rgba(218,121,39,0.4)' }}
-            >
-              Get in Touch
-            </a>
+            
+            {location.pathname === '/' ? (
+              <a 
+                href="#contact"
+                style={{
+                  padding: '0.6rem 1.5rem',
+                  borderRadius: '50px',
+                  background: 'linear-gradient(135deg, #DA7927, #ECA12C)',
+                  color: '#fff',
+                  fontWeight: 600,
+                  fontSize: '0.875rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 15px rgba(218,121,39,0.3)',
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                }}
+                onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 6px 20px rgba(218,121,39,0.4)' }}
+                onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 4px 15px rgba(218,121,39,0.3)' }}
+              >
+                Get in Touch
+              </a>
+            ) : (
+              <button 
+                onClick={() => window.dispatchEvent(new Event('open-contact-modal'))}
+                style={{
+                  padding: '0.6rem 1.5rem',
+                  borderRadius: '50px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  background: 'linear-gradient(135deg, #DA7927, #ECA12C)',
+                  color: '#fff',
+                  fontWeight: 600,
+                  fontSize: '0.875rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 15px rgba(218,121,39,0.3)',
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                }}
+                onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 6px 20px rgba(218,121,39,0.4)' }}
+                onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 4px 15px rgba(218,121,39,0.3)' }}
+              >
+                Get in Touch
+              </button>
+            )}
           </div>
         </div>
       </div>

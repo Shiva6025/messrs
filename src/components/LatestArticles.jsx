@@ -17,7 +17,7 @@ const articles = [
   }
 ]
 
-export default function LatestArticles() {
+export default function LatestArticles({ title = "Polisetty in action" }) {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function LatestArticles() {
           letterSpacing: '-0.02em',
           marginBottom: '3rem',
         }}>
-          Polisetty in action
+          {title}
         </h2>
 
         <div style={{
