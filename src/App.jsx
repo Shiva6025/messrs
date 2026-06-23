@@ -58,6 +58,53 @@ function App() {
     return () => window.removeEventListener('open-contact-modal', handleOpenModal)
   }, [])
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('img-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    const observeImages = () => {
+      const images = document.querySelectorAll('img:not(.no-reveal):not([data-no-reveal="true"]):not(.img-reveal-left):not(.img-reveal-right)');
+      images.forEach(img => {
+        const rect = img.getBoundingClientRect();
+        // Exclude tiny icons or 0 width (not rendered yet)
+        if (rect.width > 60 && rect.height > 60) {
+          const isLeft = (rect.left + rect.width / 2) < (window.innerWidth / 2);
+          img.classList.add(isLeft ? 'img-reveal-left' : 'img-reveal-right');
+          observer.observe(img);
+        }
+      });
+    };
+
+    const timer = setTimeout(observeImages, 300);
+
+    const mutationObserver = new MutationObserver((mutations) => {
+      let shouldCheck = false;
+      mutations.forEach(m => {
+        if (m.addedNodes.length > 0) shouldCheck = true;
+      });
+      if (shouldCheck) {
+        setTimeout(observeImages, 100);
+      }
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
+  }, [])
+
   return (
     <>
       <Routes>

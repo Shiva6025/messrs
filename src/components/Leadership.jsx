@@ -132,6 +132,7 @@ function LeaderCard({ leader, delay }) {
         }}>
           <img
             src={leader.image}
+            className="no-reveal"
             alt={leader.name}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />

@@ -180,7 +180,7 @@ export default function Initiatives() {
           {/* Left Image Side */}
           <div style={{ position: 'relative', minHeight: '400px' }}>
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent, #1a1008)', zIndex: 1 }} />
-            <img src={ASSETS.healthcareBanner} alt="Healthcare facility" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '28% center' }} />
+            <img src={ASSETS.healthcareBanner} className="no-reveal" alt="Healthcare facility" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '28% center' }} />
           </div>
 
           {/* Right Content Side */}

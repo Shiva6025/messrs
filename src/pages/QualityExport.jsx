@@ -198,7 +198,7 @@ export default function QualityExport() {
           ══════════════════════════════════════════════════════ */}
       <section style={{ padding: '8rem 0', background: '#faf7f2', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '40vw', opacity: 0.03, pointerEvents: 'none' }}>
-          <img src="/assets/logo (1).svg" alt="" style={{ width: '100%' }} />
+          <img src="/assets/logo (1).svg" className="no-reveal" alt="" style={{ width: '100%' }} />
         </div>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '6rem' }}>

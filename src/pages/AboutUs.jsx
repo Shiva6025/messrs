@@ -293,7 +293,7 @@ function LeaderCard({ leader, delay }) {
             overflow: 'hidden', border: `3px solid ${leader.accentColor}`,
             position: 'relative', zIndex: 1,
           }}>
-            <img src={leader.image} alt={leader.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={leader.image} className="no-reveal" alt={leader.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         </div>
 
@@ -422,7 +422,7 @@ export default function AboutUs() {
               boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
               border: '2px solid rgba(218,121,39,0.3)'
             }}>
-              <img src="/assets/pol-logo.gif" alt="Polisetty Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img src="/assets/pol-logo.gif" className="no-reveal" alt="Polisetty Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
 
             <p style={{

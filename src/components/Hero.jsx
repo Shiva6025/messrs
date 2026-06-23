@@ -216,6 +216,7 @@ export default function Hero() {
           {/* Best Exporter badge */}
           <img
             src={banLogo}
+            className="no-reveal"
             alt="Best Exporter Award – Non-manufacturer segment, 15 years"
             style={{
               position: 'absolute',
