@@ -132,7 +132,7 @@ export default function Villages() {
               ))}
             </div>
 
-            {/* Stats row */}
+            {/* Stats row
             <div style={{ display: 'flex', gap: '2rem', marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(218,121,39,0.2)' }}>
               {[
                 { value: '100+', label: 'Villages' },
@@ -148,7 +148,7 @@ export default function Villages() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Right: Image */}

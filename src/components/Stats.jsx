@@ -61,23 +61,12 @@ const stats = [
     unit: 'Villages',
     label: 'Farming Communities Served',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/>
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 12L12 4l9 8" />
+        <path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" />
       </svg>
     ),
-    color: '#282F81',
-  },
-  {
-    value: 3,
-    suffix: '',
-    unit: 'Generations',
-    label: 'Of Family Leadership',
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
-      </svg>
-    ),
-    color: '#DA7927',
+    color: '#ECA12C',
   },
 ]
 
@@ -99,7 +88,7 @@ export default function Stats() {
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
+          gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '2px',
         }}>
           {stats.map((stat, i) => (
@@ -145,7 +134,7 @@ export default function Stats() {
               <div style={{ color: stat.color, fontWeight: 700, fontSize: '1rem', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
                 {stat.unit}
               </div>
-              <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', letterSpacing: '0.05em' }}>
+              <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.8rem', letterSpacing: '0.05em' }}>
                 {stat.label}
               </div>
             </div>

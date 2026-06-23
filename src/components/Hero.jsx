@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 const heroBg = '/assets/PHOTO-2023-11-29-17-14-40-e1706867387348.webp'
 const familyImg = '/assets/slide1-fam1.webp'
+const banLogo  = '/assets/ban-logo.webp'
 
 export default function Hero() {
   const textRef = useRef(null)
@@ -93,22 +94,6 @@ export default function Hero() {
       }}>
         {/* Left: Text */}
         <div ref={textRef}>
-          {/* Badge */}
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            background: 'rgba(218,121,39,0.15)',
-            border: '1px solid rgba(218,121,39,0.4)',
-            borderRadius: '50px',
-            padding: '6px 16px',
-            marginBottom: '1.5rem',
-          }}>
-            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ECA12C', animation: 'pulse 2s ease-in-out infinite' }} />
-            <span style={{ color: '#ECA12C', fontSize: '0.75rem', letterSpacing: '0.15em', fontWeight: 600, textTransform: 'uppercase' }}>
-              Est. 1940 · 80+ Years of Excellence
-            </span>
-          </div>
 
           <h1 style={{
             fontFamily: "'Playfair Display', serif",
@@ -192,28 +177,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Trust badges */}
-          <div style={{ display: 'flex', gap: '2rem', marginTop: '3rem' }}>
-            {[
-              { value: '22M+', label: 'KGs Traded' },
-              { value: '80+', label: 'Years Legacy' },
-              { value: '100+', label: 'Villages Served' },
-            ].map(stat => (
-              <div key={stat.label}>
-                <div style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: '1.75rem',
-                  fontWeight: 700,
-                  color: '#ECA12C',
-                }}>
-                  {stat.value}
-                </div>
-                <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
+
         </div>
 
         {/* Right: Family image with decorative frame */}
@@ -248,6 +212,23 @@ export default function Hero() {
               filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.5))',
             }}
           />
+
+          {/* Best Exporter badge */}
+          <img
+            src={banLogo}
+            alt="Best Exporter Award – Non-manufacturer segment, 15 years"
+            style={{
+              position: 'absolute',
+              top: '0px',
+              right: '-10px',
+              width: '130px',
+              height: '130px',
+              objectFit: 'contain',
+              zIndex: 2,
+              animation: 'float 5s ease-in-out infinite',
+              filter: 'drop-shadow(0 8px 24px rgba(218,121,39,0.5))',
+            }}
+          />
         </div>
       </div>
 
@@ -260,19 +241,35 @@ export default function Hero() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '8px',
-        color: 'rgba(255,255,255,0.5)',
-        fontSize: '0.7rem',
+        gap: '6px',
+        color: 'rgba(255,255,255,0.55)',
+        fontSize: '0.65rem',
         letterSpacing: '0.15em',
         textTransform: 'uppercase',
-      }}>
+        cursor: 'pointer',
+      }}
+        onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+      >
         <span>Scroll</span>
-        <div style={{
-          width: '1px',
-          height: '40px',
-          background: 'linear-gradient(to bottom, rgba(218,121,39,0.8), transparent)',
-          animation: 'float 2s ease-in-out infinite',
-        }} />
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="rgba(218,121,39,0.9)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          style={{ animation: 'scrollBounce 1.6s ease-in-out infinite' }}
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+        <style>{`
+          @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); opacity: 0.6; }
+            50% { transform: translateY(6px); opacity: 1; }
+          }
+        `}</style>
       </div>
     </section>
   )

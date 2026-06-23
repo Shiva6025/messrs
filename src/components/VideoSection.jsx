@@ -31,18 +31,18 @@ export default function VideoSection() {
   }
 
   return (
-    <section style={{ padding: '6rem 0', background: '#faf7f2' }}>
+    <section style={{ padding: '1rem 0 3rem', background: '#faf7f2' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
         <div
           ref={sectionRef}
           style={{
             opacity: 0,
-            transform: 'translateY(40px)',
+            transform: 'translateY(20px)',
             transition: 'opacity 0.9s ease, transform 0.9s ease',
           }}
         >
           {/* Section header */}
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -51,18 +51,18 @@ export default function VideoSection() {
             }}>
               <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, transparent, #DA7927)' }} />
               <span style={{ color: '#DA7927', fontSize: '0.75rem', letterSpacing: '0.2em', fontWeight: 600, textTransform: 'uppercase' }}>
-                Polisetty in Action
+                See the Legacy in Motion
               </span>
               <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, #DA7927, transparent)' }} />
             </div>
-            <h2 style={{
+            {/* <h2 style={{
               fontFamily: "'Playfair Display', serif",
               fontSize: 'clamp(1.8rem, 3vw, 2.75rem)',
               fontWeight: 800,
               color: '#1a1008',
             }}>
               See the Legacy in Motion
-            </h2>
+            </h2> */}
           </div>
 
           {/* Video container */}
@@ -116,7 +116,7 @@ export default function VideoSection() {
                   animation: 'float 3s ease-in-out infinite',
                 }}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff">
-                    <polygon points="5 3 19 12 5 21 5 3"/>
+                    <polygon points="5 3 19 12 5 21 5 3" />
                   </svg>
                 </div>
                 <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', fontWeight: 500 }}>

@@ -91,7 +91,7 @@ export default function HealthCentres() {
           </div>
 
           {/* Center stat banner */}
-          <div style={{
+          {/* <div style={{
             background: 'linear-gradient(135deg, #282F81 0%, #DA7927 100%)',
             borderRadius: '20px',
             padding: '2.5rem',
@@ -102,7 +102,6 @@ export default function HealthCentres() {
             position: 'relative',
             overflow: 'hidden',
           }}>
-            {/* Background pattern */}
             <div style={{
               position: 'absolute',
               inset: 0,
@@ -139,7 +138,7 @@ export default function HealthCentres() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Services grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>

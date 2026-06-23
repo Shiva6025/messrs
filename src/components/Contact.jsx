@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react'
 
 export default function Contact() {
   const ref = useRef(null)
-  const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
@@ -118,7 +118,7 @@ export default function Contact() {
                 {
                   icon: (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
                     </svg>
                   ),
                   label: 'Address',
@@ -127,7 +127,7 @@ export default function Contact() {
                 {
                   icon: (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                     </svg>
                   ),
                   label: 'Phone',
@@ -136,7 +136,7 @@ export default function Contact() {
                 {
                   icon: (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
                     </svg>
                   ),
                   label: 'Email',
@@ -240,28 +240,53 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div>
-                  <label style={{ display: 'block', color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem', marginBottom: '6px', letterSpacing: '0.05em' }}>
-                    Company / Organization
-                  </label>
-                  <input
-                    id="contact-company"
-                    type="text"
-                    placeholder="Your company"
-                    style={inputStyle}
-                    value={formData.company}
-                    onChange={e => setFormData({ ...formData, company: e.target.value })}
-                    onFocus={e => {
-                      e.target.style.borderColor = 'rgba(218,121,39,0.6)'
-                      e.target.style.background = 'rgba(255,255,255,0.08)'
-                      e.target.style.boxShadow = '0 0 0 3px rgba(218,121,39,0.1)'
-                    }}
-                    onBlur={e => {
-                      e.target.style.borderColor = 'rgba(218,121,39,0.2)'
-                      e.target.style.background = 'rgba(255,255,255,0.05)'
-                      e.target.style.boxShadow = 'none'
-                    }}
-                  />
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div>
+                    <label style={{ display: 'block', color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem', marginBottom: '6px', letterSpacing: '0.05em' }}>
+                      Phone Number
+                    </label>
+                    <input
+                      id="contact-phone"
+                      type="tel"
+                      placeholder="+91 12345 67890"
+                      style={inputStyle}
+                      value={formData.phone}
+                      onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                      onFocus={e => {
+                        e.target.style.borderColor = 'rgba(218,121,39,0.6)'
+                        e.target.style.background = 'rgba(255,255,255,0.08)'
+                        e.target.style.boxShadow = '0 0 0 3px rgba(218,121,39,0.1)'
+                      }}
+                      onBlur={e => {
+                        e.target.style.borderColor = 'rgba(218,121,39,0.2)'
+                        e.target.style.background = 'rgba(255,255,255,0.05)'
+                        e.target.style.boxShadow = 'none'
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem', marginBottom: '6px', letterSpacing: '0.05em' }}>
+                      Company / Organization
+                    </label>
+                    <input
+                      id="contact-company"
+                      type="text"
+                      placeholder="Your company"
+                      style={inputStyle}
+                      value={formData.company}
+                      onChange={e => setFormData({ ...formData, company: e.target.value })}
+                      onFocus={e => {
+                        e.target.style.borderColor = 'rgba(218,121,39,0.6)'
+                        e.target.style.background = 'rgba(255,255,255,0.08)'
+                        e.target.style.boxShadow = '0 0 0 3px rgba(218,121,39,0.1)'
+                      }}
+                      onBlur={e => {
+                        e.target.style.borderColor = 'rgba(218,121,39,0.2)'
+                        e.target.style.background = 'rgba(255,255,255,0.05)'
+                        e.target.style.boxShadow = 'none'
+                      }}
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -315,8 +340,8 @@ export default function Contact() {
                 >
                   Send Message
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <line x1="22" y1="2" x2="11" y2="13"/>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
                   </svg>
                 </button>
               </form>
@@ -334,7 +359,7 @@ export default function Contact() {
                   boxShadow: '0 10px 30px rgba(218,121,39,0.4)',
                 }}>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5">
-                    <polyline points="20 6 9 17 4 12"/>
+                    <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", color: '#fff', fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem' }}>

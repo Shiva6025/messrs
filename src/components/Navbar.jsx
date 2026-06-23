@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 const logoSvg = '/assets/logo (1).svg'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
+  const isAbout = location.pathname === '/about'
+  const isInfra = location.pathname === '/infrastructure'
+  const isSubPage = isAbout || isInfra
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -11,13 +16,23 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  /* On sub-pages the navbar is always opaque (no transparent hero behind it) */
+  const alwaysOpaque = isSubPage
+
   const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Leadership', href: '#leadership' },
-    { label: 'Impact', href: '#impact' },
-    { label: 'Sourcing', href: '#sourcing' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'About Us', href: '/about', isRoute: true },
+    { label: 'Infrastructure', href: '/infrastructure', isRoute: true },
+    { label: 'Leadership', href: isSubPage ? '/#leadership' : '#leadership' },
+    { label: 'Impact', href: isSubPage ? '/#impact' : '#impact' },
+    { label: 'Contact', href: isSubPage ? '/#contact' : '#contact' },
   ]
+
+  const textDark = alwaysOpaque || scrolled
+  const navBg = alwaysOpaque
+    ? 'rgba(255, 251, 245, 0.97)'
+    : scrolled
+    ? 'rgba(255, 251, 245, 0.95)'
+    : 'transparent'
 
   return (
     <nav
@@ -29,67 +44,94 @@ export default function Navbar() {
         right: 0,
         zIndex: 1000,
         transition: 'all 0.4s ease',
-        background: scrolled
-          ? 'rgba(255, 251, 245, 0.95)'
-          : 'transparent',
-        backdropFilter: scrolled ? 'blur(20px)' : 'none',
-        boxShadow: scrolled ? '0 2px 40px rgba(218,121,39,0.15)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(218,121,39,0.2)' : '1px solid transparent',
+        background: navBg,
+        backdropFilter: (alwaysOpaque || scrolled) ? 'blur(20px)' : 'none',
+        boxShadow: (alwaysOpaque || scrolled) ? '0 2px 40px rgba(218,121,39,0.15)' : 'none',
+        borderBottom: (alwaysOpaque || scrolled) ? '1px solid rgba(218,121,39,0.2)' : '1px solid transparent',
       }}
     >
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '80px' }}>
           {/* Logo */}
-          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
             <img src={logoSvg} alt="Polisetty Logo" style={{ width: '52px', height: '52px' }} />
             <div>
               <div style={{
                 fontFamily: "'Playfair Display', serif",
-                fontWeight: 700,
-                fontSize: '1rem',
-                color: scrolled ? '#1a1008' : '#fff',
-                lineHeight: 1.2,
+                fontWeight: 800,
+                fontSize: '1.05rem',
+                color: textDark ? '#1a1008' : '#fff',
+                lineHeight: 1.1,
                 transition: 'color 0.4s',
-                textShadow: scrolled ? 'none' : '0 2px 8px rgba(0,0,0,0.5)',
+                textShadow: textDark ? 'none' : '0 2px 8px rgba(0,0,0,0.5)',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
               }}>
-                Messrs Polisetty
+                MESSRS
               </div>
               <div style={{
-                fontSize: '0.65rem',
-                letterSpacing: '0.12em',
-                color: scrolled ? '#DA7927' : '#ECA12C',
+                fontSize: '0.7rem',
+                letterSpacing: '0.1em',
+                color: textDark ? '#DA7927' : '#ECA12C',
                 textTransform: 'uppercase',
                 transition: 'color 0.4s',
+                fontWeight: 600,
+                lineHeight: 1.2,
               }}>
-                Somasundaram & Sons
+                Polisetty Somasundaram
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-            {navLinks.map(link => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="underline-anim"
-                style={{
-                  fontWeight: 500,
-                  fontSize: '0.875rem',
-                  letterSpacing: '0.05em',
-                  color: scrolled ? '#3d2c1e' : 'rgba(255,255,255,0.9)',
-                  textDecoration: 'none',
-                  transition: 'color 0.3s',
-                  textTransform: 'uppercase',
-                }}
-                onMouseEnter={e => e.target.style.color = '#DA7927'}
-                onMouseLeave={e => e.target.style.color = scrolled ? '#3d2c1e' : 'rgba(255,255,255,0.9)'}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map(link => {
+              const isActive = link.isRoute && location.pathname === link.href
+              if (link.isRoute) {
+                return (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className="underline-anim"
+                    style={{
+                      fontWeight: isActive ? 700 : 500,
+                      fontSize: '0.875rem',
+                      letterSpacing: '0.05em',
+                      color: isActive ? '#DA7927' : (textDark ? '#3d2c1e' : 'rgba(255,255,255,0.9)'),
+                      textDecoration: 'none',
+                      transition: 'color 0.3s',
+                      textTransform: 'uppercase',
+                    }}
+                    onMouseEnter={e => e.target.style.color = '#DA7927'}
+                    onMouseLeave={e => e.target.style.color = isActive ? '#DA7927' : (textDark ? '#3d2c1e' : 'rgba(255,255,255,0.9)')}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              }
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="underline-anim"
+                  style={{
+                    fontWeight: 500,
+                    fontSize: '0.875rem',
+                    letterSpacing: '0.05em',
+                    color: textDark ? '#3d2c1e' : 'rgba(255,255,255,0.9)',
+                    textDecoration: 'none',
+                    transition: 'color 0.3s',
+                    textTransform: 'uppercase',
+                  }}
+                  onMouseEnter={e => e.target.style.color = '#DA7927'}
+                  onMouseLeave={e => e.target.style.color = textDark ? '#3d2c1e' : 'rgba(255,255,255,0.9)'}
+                >
+                  {link.label}
+                </a>
+              )
+            })}
             <a
-              href="#contact"
+              href={isSubPage ? '/#contact' : '#contact'}
               style={{
                 background: 'linear-gradient(135deg, #DA7927, #ECA12C)',
                 color: '#fff',
