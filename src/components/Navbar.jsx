@@ -62,36 +62,47 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
             <img src={logoSvg} alt="Polisetty Logo" style={{ width: '52px', height: '52px' }} />
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
               <div style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 800,
                 fontSize: '1.05rem',
                 color: textDark ? '#1a1008' : '#fff',
-                lineHeight: 1.1,
+                lineHeight: 1,
                 transition: 'color 0.4s',
                 textShadow: textDark ? 'none' : '0 2px 8px rgba(0,0,0,0.5)',
-                letterSpacing: '0.12em',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
               }}>
                 MESSRS
               </div>
               <div style={{
-                fontSize: '0.7rem',
-                letterSpacing: '0.1em',
+                fontSize: '0.65rem',
+                letterSpacing: '0.12em',
                 color: textDark ? '#DA7927' : '#ECA12C',
                 textTransform: 'uppercase',
                 transition: 'color 0.4s',
-                fontWeight: 600,
-                lineHeight: 1.2,
+                fontWeight: 700,
+                lineHeight: 1,
               }}>
-                Polisetty Somasundaram
+                POLISETTY
+              </div>
+              <div style={{
+                fontSize: '0.65rem',
+                letterSpacing: '0.12em',
+                color: textDark ? '#DA7927' : '#ECA12C',
+                textTransform: 'uppercase',
+                transition: 'color 0.4s',
+                fontWeight: 700,
+                lineHeight: 1,
+              }}>
+                SOMASUNDARAM
               </div>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '1.3rem', alignItems: 'center' }}>
             {navLinks.map(link => {
               const isActive = link.isRoute && location.pathname === link.href
               if (link.isRoute) {
@@ -108,6 +119,7 @@ export default function Navbar() {
                       textDecoration: 'none',
                       transition: 'color 0.3s',
                       textTransform: 'uppercase',
+                      whiteSpace: 'nowrap',
                     }}
                     onMouseEnter={e => e.target.style.color = '#DA7927'}
                     onMouseLeave={e => e.target.style.color = isActive ? '#DA7927' : (textDark ? '#3d2c1e' : 'rgba(255,255,255,0.9)')}
@@ -129,6 +141,7 @@ export default function Navbar() {
                     textDecoration: 'none',
                     transition: 'color 0.3s',
                     textTransform: 'uppercase',
+                    whiteSpace: 'nowrap',
                   }}
                   onMouseEnter={e => e.target.style.color = '#DA7927'}
                   onMouseLeave={e => e.target.style.color = textDark ? '#3d2c1e' : 'rgba(255,255,255,0.9)'}
@@ -137,48 +150,6 @@ export default function Navbar() {
                 </a>
               )
             })}
-            
-            {location.pathname === '/' ? (
-              <a 
-                href="#contact"
-                style={{
-                  padding: '0.6rem 1.5rem',
-                  borderRadius: '50px',
-                  background: 'linear-gradient(135deg, #DA7927, #ECA12C)',
-                  color: '#fff',
-                  fontWeight: 600,
-                  fontSize: '0.875rem',
-                  textDecoration: 'none',
-                  boxShadow: '0 4px 15px rgba(218,121,39,0.3)',
-                  transition: 'transform 0.2s, box-shadow 0.2s',
-                }}
-                onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 6px 20px rgba(218,121,39,0.4)' }}
-                onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 4px 15px rgba(218,121,39,0.3)' }}
-              >
-                Get in Touch
-              </a>
-            ) : (
-              <button 
-                onClick={() => window.dispatchEvent(new Event('open-contact-modal'))}
-                style={{
-                  padding: '0.6rem 1.5rem',
-                  borderRadius: '50px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  background: 'linear-gradient(135deg, #DA7927, #ECA12C)',
-                  color: '#fff',
-                  fontWeight: 600,
-                  fontSize: '0.875rem',
-                  textDecoration: 'none',
-                  boxShadow: '0 4px 15px rgba(218,121,39,0.3)',
-                  transition: 'transform 0.2s, box-shadow 0.2s',
-                }}
-                onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 6px 20px rgba(218,121,39,0.4)' }}
-                onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 4px 15px rgba(218,121,39,0.3)' }}
-              >
-                Get in Touch
-              </button>
-            )}
           </div>
         </div>
       </div>

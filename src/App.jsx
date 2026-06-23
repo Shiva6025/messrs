@@ -71,6 +71,29 @@ function App() {
         <Route path="/policies" element={<Policies />} />
       </Routes>
       <ContactModal isOpen={isContactModalOpen} onClose={() => setContactModalOpen(false)} />
+      <button 
+        onClick={() => window.dispatchEvent(new Event('open-contact-modal'))}
+        style={{
+          position: 'fixed',
+          bottom: '30px',
+          right: '30px',
+          zIndex: 9999,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          width: '60px', height: '60px',
+          borderRadius: '50%',
+          border: 'none',
+          cursor: 'pointer',
+          background: 'linear-gradient(135deg, #DA7927, #ECA12C)',
+          color: '#fff',
+          boxShadow: '0 4px 15px rgba(218,121,39,0.3)',
+          transition: 'all 0.3s ease',
+        }}
+        onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px) scale(1.05)'; e.currentTarget.style.boxShadow = '0 8px 25px rgba(218,121,39,0.5)' }}
+        onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0) scale(1)'; e.currentTarget.style.boxShadow = '0 4px 15px rgba(218,121,39,0.3)' }}
+        title="Customer Care"
+      >
+        <svg className="animate-ring" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"></path><path d="M21 16v2a4 4 0 0 1-4 4h-5"></path></svg>
+      </button>
     </>
   )
 }
