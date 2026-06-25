@@ -118,11 +118,11 @@ export default function Contact() {
                 {
                   icon: (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
                     </svg>
                   ),
-                  label: 'Address',
-                  value: 'Guntur, Andhra Pradesh, India',
+                  label: 'Email',
+                  value: 'pssundar@polisetty.com',
                 },
                 {
                   icon: (
@@ -131,16 +131,16 @@ export default function Contact() {
                     </svg>
                   ),
                   label: 'Phone',
-                  value: '+91 863 225 XXXX',
+                  value: '+91 863 222 1852',
                 },
                 {
                   icon: (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
                     </svg>
                   ),
-                  label: 'Email',
-                  value: 'info@polisettysons.com',
+                  label: 'Address',
+                  value: 'Messrs. Polisetty Somasundaram Tobacco Packers & Exporters, PO BOX 54, Mangalagiri Road, Guntur District, Andhra Pradesh, India, 522001',
                 },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
