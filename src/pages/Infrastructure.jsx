@@ -230,10 +230,10 @@ function StatCard({ stat, delay }) {
       <div style={{ color: '#DA7927', fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.5rem' }}>
         {stat.category}
       </div>
-      <div style={{
-        fontFamily: "'Playfair Display', serif",
+      <div className="num-font" style={{
+        fontFamily: "'Oswald', sans-serif",
         fontSize: 'clamp(2rem, 4vw, 3rem)',
-        fontWeight: 900,
+        fontWeight: 700,
         color: '#ECA12C',
         lineHeight: 1,
         marginBottom: '0.25rem',
@@ -562,7 +562,7 @@ export default function Infrastructure() {
         }}>
           {stats.map((s, i) => (
             <div key={i} style={{ borderRight: i !== stats.length - 1 ? '1px solid #f0efe9' : 'none', paddingRight: i !== stats.length - 1 ? '2rem' : '0' }}>
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem', fontWeight: 800, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>
+              <div className="num-font" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '4rem', fontWeight: 700, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>
                 {s.value}<span style={{ fontSize: '2.5rem' }}>{s.unit}</span>
               </div>
               <div style={{ color: '#1a1008', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', lineHeight: 1.4 }}>

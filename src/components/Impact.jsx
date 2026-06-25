@@ -54,10 +54,10 @@ function StatCard({ stat, delay }) {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Value */}
-      <div style={{
-        fontFamily: "'Playfair Display', serif",
+      <div className="num-font" style={{
+        fontFamily: "'Oswald', sans-serif",
         fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-        fontWeight: 900,
+        fontWeight: 700,
         lineHeight: 1,
         marginBottom: '0.2rem',
         background: `linear-gradient(135deg, ${stat.color}, #F1B415)`,

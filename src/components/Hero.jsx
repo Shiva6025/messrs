@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 const heroBg = '/assets/PHOTO-2023-11-29-17-14-40-e1706867387348.webp'
-const familyImg = '/assets/slide1-fam1.webp'
+const familyImg = '/assets/slide1-fam1.png'
 const banLogo = '/assets/ban-logo.png'
 
 export default function Hero() {

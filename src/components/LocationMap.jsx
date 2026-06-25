@@ -30,7 +30,7 @@ export default function LocationMap() {
             overflow: 'hidden',
             boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
             border: '1px solid rgba(218,121,39,0.1)',
-            aspectRatio: '21/9',
+            aspectRatio: '21/6.5',
             position: 'relative',
           }}
         >
@@ -40,7 +40,7 @@ export default function LocationMap() {
             style={{
               width: '100%',
               height: '100%',
-              objectFit: 'cover',
+              objectFit: "contain",
               display: 'block',
             }}
           />

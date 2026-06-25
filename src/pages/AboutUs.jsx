@@ -6,7 +6,7 @@ import MeetOurTeam from '../components/MeetOurTeam'
 import BusinessExpansion from '../components/BusinessExpansion'
 
 const heroBg = '/assets/10262021000554n17-e1707828388753.jpg'
-const familyImg = '/assets/slide1-fam1.webp'
+const familyImg = '/assets/slide1-fam1.png'
 const shyamSundar = '/assets/Sri-Polisetty-Shyam-Sundar.webp'
 const srihari = '/assets/Sri-Polisetty-Srihari-Prasada-Rao.webp'
 const somasundaram = '/assets/somasundaram.webp'

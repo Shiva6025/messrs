@@ -107,15 +107,15 @@ export default function Initiatives() {
           display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', textAlign: 'center'
         }}>
           <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem', fontWeight: 800, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>200+</div>
+            <div className="num-font" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '4rem', fontWeight: 700, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>200+</div>
             <div style={{ color: '#1a1008', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Beds established in the<br />Dr. G Sankararao Memorial Hospital</div>
           </div>
           <div style={{ borderLeft: '1px solid #f0efe9', borderRight: '1px solid #f0efe9' }}>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem', fontWeight: 800, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>50</div>
+            <div className="num-font" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '4rem', fontWeight: 700, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>50</div>
             <div style={{ color: '#1a1008', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Beds inside the<br />Polisetty Somasundaram wing</div>
           </div>
           <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem', fontWeight: 800, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>300+</div>
+            <div className="num-font" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '4rem', fontWeight: 700, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>300+</div>
             <div style={{ color: '#1a1008', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Total workers<br />additionally supported</div>
           </div>
         </div>

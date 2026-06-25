@@ -80,63 +80,69 @@ export default function Blogs() {
       {/* ══════════════════════════════════════════════════════
           HERO / FEATURED BLOG
           ══════════════════════════════════════════════════════ */}
-      <section style={{ position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
+      <section style={{ position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'flex-end' }}>
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: `url(${featuredBlog.image})`,
           backgroundSize: 'cover', backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-          transform: 'scale(1.05)'
         }} />
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to top, rgba(26,16,8,0.95) 0%, rgba(26,16,8,0.6) 50%, rgba(26,16,8,0.3) 100%)',
+          background: 'linear-gradient(to top, rgba(10,8,4,0.97) 0%, rgba(10,8,4,0.65) 45%, rgba(10,8,4,0.15) 100%)',
         }} />
 
-        <div ref={heroRef} style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1, width: '100%', paddingTop: '150px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem', background: 'rgba(218,121,39,0.2)', padding: '0.5rem 1rem', borderRadius: '50px', border: '1px solid rgba(218,121,39,0.4)', backdropFilter: 'blur(10px)' }}>
-            <span style={{ color: '#DA7927', fontSize: '0.85rem', letterSpacing: '0.15em', fontWeight: 700, textTransform: 'uppercase' }}>Featured Blog • {featuredBlog.category}</span>
+        <div ref={heroRef} style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem 3.5rem', position: 'relative', zIndex: 1, width: '100%' }}>
+
+          {/* Category pill */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '1rem', background: 'rgba(218,121,39,0.15)', padding: '0.35rem 0.85rem', borderRadius: '50px', border: '1px solid rgba(218,121,39,0.35)', backdropFilter: 'blur(10px)' }}>
+            <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#DA7927' }} />
+            <span style={{ color: '#DA7927', fontSize: '0.72rem', letterSpacing: '0.18em', fontWeight: 700, textTransform: 'uppercase' }}>Featured · {featuredBlog.category}</span>
           </div>
 
           <h1 style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-            fontWeight: 800, color: '#fff', lineHeight: 1.15, marginBottom: '2rem', maxWidth: '900px'
+            fontSize: 'clamp(1.8rem, 3.5vw, 3rem)',
+            fontWeight: 800, color: '#fff', lineHeight: 1.2, marginBottom: '1.25rem', maxWidth: '720px'
           }}>
             {featuredBlog.title}
           </h1>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#DA7927', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '1.2rem' }}>A</div>
-              <div>
-                <div style={{ color: '#fff', fontWeight: 600, fontSize: '0.95rem' }}>Admin</div>
-                <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>Author</div>
-              </div>
+          {/* Meta row */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.75rem', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#DA7927', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '0.8rem' }}>A</div>
+              <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.82rem', fontWeight: 500 }}>Admin</span>
             </div>
-            <div style={{ width: '1px', height: '30px', background: 'rgba(255,255,255,0.2)' }} />
-            <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <div style={{ width: '1px', height: '14px', background: 'rgba(255,255,255,0.2)' }} />
+            <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
               {featuredBlog.date}
-            </div>
-            <div style={{ width: '1px', height: '30px', background: 'rgba(255,255,255,0.2)' }} />
-            <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </span>
+            <div style={{ width: '1px', height: '14px', background: 'rgba(255,255,255,0.2)' }} />
+            <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
               {featuredBlog.readTime}
-            </div>
+            </span>
           </div>
 
+          {/* Compact ghost button */}
           <a href="#" style={{
-            display: 'inline-flex', alignItems: 'center', gap: '12px',
-            background: 'linear-gradient(135deg, #DA7927, #ECA12C)', color: '#fff',
-            padding: '1.2rem 3rem', borderRadius: '50px',
-            fontWeight: 700, fontSize: '1rem', textDecoration: 'none',
-            boxShadow: '0 8px 30px rgba(218,121,39,0.4)', transition: 'transform 0.2s', letterSpacing: '0.05em'
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            background: 'transparent',
+            color: '#fff',
+            padding: '0.6rem 1.4rem',
+            borderRadius: '50px',
+            border: '1px solid rgba(255,255,255,0.4)',
+            fontWeight: 600, fontSize: '0.82rem', textDecoration: 'none',
+            letterSpacing: '0.08em', textTransform: 'uppercase',
+            backdropFilter: 'blur(6px)',
+            transition: 'border-color 0.2s, background 0.2s, color 0.2s',
           }}
-            onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-3px)'}
-            onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(218,121,39,0.9)'; e.currentTarget.style.borderColor = 'transparent' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)' }}>
             Read Article
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
       </section>
@@ -144,7 +150,7 @@ export default function Blogs() {
       {/* ══════════════════════════════════════════════════════
           BLOG LIST & FILTERS
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '6rem 0 10rem', background: '#faf7f2', position: 'relative' }}>
+      <section style={{ padding: '2rem 0 6rem', background: '#faf7f2', position: 'relative' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
 
           {/* Filters */}

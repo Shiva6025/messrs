@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react'
-const familyImg = '/assets/slide1-fam1.webp'
+const familyImg = '/assets/slide1-fam1.png'
 
 const programs = [
   {

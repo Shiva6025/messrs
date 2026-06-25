@@ -179,15 +179,15 @@ export default function QualityExport() {
           display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', textAlign: 'center'
         }}>
           <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem', fontWeight: 800, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>20+</div>
+            <div className="num-font" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '4rem', fontWeight: 700, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>20+</div>
             <div style={{ color: '#1a1008', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Varieties of tobacco<br />exported</div>
           </div>
           <div style={{ borderLeft: '1px solid #f0efe9', borderRight: '1px solid #f0efe9' }}>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem', fontWeight: 800, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>45<span style={{ fontSize: '2.5rem' }}>MT</span></div>
+            <div className="num-font" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '4rem', fontWeight: 700, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>45<span style={{ fontSize: '2.5rem' }}>MT</span></div>
             <div style={{ color: '#1a1008', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Quantity of tobacco<br />exported yearly</div>
           </div>
           <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '4rem', fontWeight: 800, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>56+</div>
+            <div className="num-font" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '4rem', fontWeight: 700, color: '#DA7927', marginBottom: '0.5rem', lineHeight: 1 }}>56+</div>
             <div style={{ color: '#1a1008', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Number of countries<br />exported to</div>
           </div>
         </div>

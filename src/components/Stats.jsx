@@ -121,10 +121,10 @@ export default function Stats() {
               </div>
 
               {/* Value */}
-              <div style={{
-                fontFamily: "'Playfair Display', serif",
+              <div className="num-font" style={{
+                fontFamily: "'Oswald', sans-serif",
                 fontSize: '3.5rem',
-                fontWeight: 900,
+                fontWeight: 700,
                 color: '#fff',
                 lineHeight: 1,
                 marginBottom: '0.25rem',
