@@ -40,9 +40,9 @@ export default function MeetOurTeam() {
   const [activeCategory, setActiveCategory] = useState(categories[0])
 
   return (
-    <section style={{ padding: '8rem 0', background: '#fff', position: 'relative' }}>
+    <section style={{ padding: '0rem 0 6rem', background: '#fff', position: 'relative' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-        
+
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1rem' }}>
@@ -61,12 +61,12 @@ export default function MeetOurTeam() {
         </div>
 
         {/* Tabs */}
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          flexWrap: 'wrap', 
-          gap: '1rem', 
-          marginBottom: '5rem' 
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          gap: '1rem',
+          marginBottom: '2rem'
         }}>
           {categories.map((cat) => {
             const isActive = activeCategory === cat
@@ -101,17 +101,17 @@ export default function MeetOurTeam() {
         </div>
 
         {/* Grid of Team Members */}
-        <div 
+        <div
           key={activeCategory} // Forces re-render/animation on tab change
-          style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', 
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
             gap: '3rem',
             animation: 'fadeInUp 0.6s ease forwards'
           }}
         >
           {teamData[activeCategory].map((member, idx) => (
-            <div 
+            <div
               key={idx}
               style={{
                 position: 'relative',
@@ -138,21 +138,21 @@ export default function MeetOurTeam() {
             >
               {/* Image */}
               <div style={{ aspectRatio: '4/5', position: 'relative', background: '#333' }}>
-                <img 
-                  src={member.image} 
+                <img
+                  src={member.image}
                   alt={member.name}
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
+                  style={{
+                    width: '100%',
+                    height: '100%',
                     objectFit: 'cover'
                   }}
                   onError={(e) => {
                     e.currentTarget.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(member.name) + '&background=1a1008&color=fff&size=512'
                   }}
                 />
-                
+
                 {/* Hover Overlay */}
-                <div 
+                <div
                   className="member-overlay"
                   style={{
                     position: 'absolute',
@@ -167,10 +167,10 @@ export default function MeetOurTeam() {
                   }}
                 >
                   <div style={{ width: '30px', height: '2px', background: '#DA7927', marginBottom: '1rem' }} />
-                  <h4 style={{ 
-                    fontFamily: "'Playfair Display', serif", 
-                    color: '#fff', 
-                    fontSize: '1.25rem', 
+                  <h4 style={{
+                    fontFamily: "'Playfair Display', serif",
+                    color: '#fff',
+                    fontSize: '1.25rem',
                     fontWeight: 700,
                     margin: 0
                   }}>
@@ -181,10 +181,10 @@ export default function MeetOurTeam() {
 
               {/* Default Label (visible when not hovering) */}
               <div style={{ padding: '1.5rem', textAlign: 'center', background: '#fff' }}>
-                <h4 style={{ 
-                  fontFamily: "'Playfair Display', serif", 
-                  color: '#1a1008', 
-                  fontSize: '1.1rem', 
+                <h4 style={{
+                  fontFamily: "'Playfair Display', serif",
+                  color: '#1a1008',
+                  fontSize: '1.1rem',
                   fontWeight: 700,
                   margin: 0
                 }}>
@@ -196,7 +196,8 @@ export default function MeetOurTeam() {
         </div>
 
         {/* Global Keyframes */}
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }

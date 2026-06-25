@@ -38,7 +38,7 @@ const stats = [
     label: 'Premium Tobacco Traded',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
       </svg>
     ),
     color: '#DA7927',
@@ -50,7 +50,7 @@ const stats = [
     label: 'Of Trusted Excellence',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+        <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
       </svg>
     ),
     color: '#ECA12C',
@@ -74,7 +74,7 @@ export default function Stats() {
   return (
     <section style={{
       background: 'linear-gradient(135deg, #1a1008 0%, #282F81 50%, #1a1008 100%)',
-      padding: '5rem 0',
+      // padding: '5rem 0',
       position: 'relative',
       overflow: 'hidden',
     }}>

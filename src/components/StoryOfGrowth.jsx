@@ -73,12 +73,12 @@ function StorySection({ item, index }) {
   const isEven = index % 2 === 0
 
   return (
-    <div 
+    <div
       ref={ref}
-      style={{ 
-        display: 'grid', 
-        gridTemplateColumns: '1fr 1fr', 
-        gap: '6rem', 
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '6rem',
         alignItems: 'center',
         marginBottom: index !== storyData.length - 1 ? '8rem' : '0',
         opacity: 0,
@@ -91,11 +91,11 @@ function StorySection({ item, index }) {
         <div style={{ display: 'inline-block', background: 'rgba(218,121,39,0.1)', padding: '0.4rem 1rem', borderRadius: '50px', color: '#DA7927', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1rem' }}>
           {item.label}
         </div>
-        <h3 style={{ 
-          fontFamily: "'Playfair Display', serif", 
-          fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
-          fontWeight: 800, 
-          color: '#1a1008', 
+        <h3 style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+          fontWeight: 800,
+          color: '#1a1008',
           marginBottom: '1.5rem',
           lineHeight: 1.2
         }}>
@@ -113,24 +113,24 @@ function StorySection({ item, index }) {
           borderRadius: '30px',
           zIndex: 0
         }} />
-        <div style={{ 
-          position: 'relative', 
-          borderRadius: '30px', 
+        <div style={{
+          position: 'relative',
+          borderRadius: '30px',
           overflow: 'hidden',
           boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
           zIndex: 1,
           border: '1px solid rgba(255,255,255,0.5)',
           aspectRatio: '4/3'
         }}>
-          <img 
-            src={item.image} 
-            alt={item.title} 
-            style={{ 
-              width: '100%', 
-              height: '100%', 
+          <img
+            src={item.image}
+            alt={item.title}
+            style={{
+              width: '100%',
+              height: '100%',
               objectFit: 'cover',
               transition: 'transform 0.5s ease'
-            }} 
+            }}
             onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
             onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
           />
@@ -142,9 +142,9 @@ function StorySection({ item, index }) {
 
 export default function StoryOfGrowth() {
   return (
-    <section style={{ padding: '8rem 0', background: '#faf7f2', position: 'relative' }}>
+    <section style={{ padding: '3rem 0 6rem', background: '#faf7f2', position: 'relative' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-        
+
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1rem' }}>

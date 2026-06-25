@@ -124,9 +124,9 @@ export default function Initiatives() {
       {/* ══════════════════════════════════════════════════════
           TRANSFORMING LIVES (PREMIUM OVERLAPPING CARDS)
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#faf7f2' }}>
+      <section style={{ padding: '4rem 0', background: '#faf7f2' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#1a1008', marginBottom: '1.5rem' }}>
               Transforming <span style={{ color: '#DA7927' }}>Lives</span>
             </h2>
@@ -136,7 +136,7 @@ export default function Initiatives() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '6rem 4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '3rem 4rem' }}>
             {INITIATIVES.map((item, i) => (
               <div key={i} style={{ position: 'relative', marginTop: i % 2 !== 0 ? '4rem' : '0' }}>
                 <div style={{
@@ -184,7 +184,7 @@ export default function Initiatives() {
           </div>
 
           {/* Right Content Side */}
-          <div style={{ padding: '8rem 4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 2 }}>
+          <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 2 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
               <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, transparent, #DA7927)' }} />
               <span style={{ color: '#DA7927', fontSize: '0.85rem', letterSpacing: '0.2em', fontWeight: 600, textTransform: 'uppercase' }}>Ensuring Care</span>
@@ -239,7 +239,7 @@ export default function Initiatives() {
       {/* ══════════════════════════════════════════════════════
           WE CARE FOR OUR PEOPLE (ALTERNATING BLOCKS)
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#fff' }}>
+      <section style={{ padding: '4rem 0', background: '#fff' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 800, color: '#1a1008', marginBottom: '1.5rem' }}>
@@ -248,7 +248,7 @@ export default function Initiatives() {
             <div style={{ width: '60px', height: '2px', background: '#DA7927', margin: '0 auto' }} />
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {/* Block 1: Scholarships */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
               <div style={{ order: 1 }}>
@@ -293,7 +293,7 @@ export default function Initiatives() {
         </div>
       </section>
 
-      <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg, #DA7927, #ECA12C)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '4rem 2rem', background: 'linear-gradient(135deg, #DA7927, #ECA12C)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '250px', height: '250px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)' }} />
         <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '300px', height: '300px', borderRadius: '50%', background: 'rgba(255,255,255,0.06)' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '700px', margin: '0 auto' }}>

@@ -41,7 +41,7 @@ export default function Contact() {
     <section
       id="contact"
       style={{
-        padding: '6rem 0',
+        padding: '3rem 0',
         background: 'linear-gradient(135deg, #1a0a02 0%, #0d1440 100%)',
         position: 'relative',
         overflow: 'hidden',

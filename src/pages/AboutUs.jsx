@@ -450,7 +450,7 @@ export default function AboutUs() {
       </section>
 
       {/* ── OVERVIEW ─────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 0', background: '#fff', position: 'relative' }}>
+      <section style={{ padding: '3rem 0 1rem', background: '#fff', position: 'relative' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center' }}>
             <h2 style={{
@@ -553,7 +553,7 @@ export default function AboutUs() {
         </div>
       </section> */}
 
-      <section style={{ padding: '6rem 0', background: '#fff', position: 'relative' }}>
+      <section style={{ padding: '3rem 0 6rem', background: '#fff', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(218,121,39,0.3), transparent)' }} />
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div
@@ -608,7 +608,7 @@ export default function AboutUs() {
       <BusinessExpansion />
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg, #DA7927, #ECA12C)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '4rem 2rem', background: 'linear-gradient(135deg, #DA7927, #ECA12C)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '250px', height: '250px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)' }} />
         <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '300px', height: '300px', borderRadius: '50%', background: 'rgba(255,255,255,0.06)' }} />
         <div

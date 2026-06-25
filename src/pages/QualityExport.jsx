@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -120,9 +121,19 @@ const EXPORT_PRODUCTS = [
 
 export default function QualityExport() {
   const heroRef = useRef(null)
+  const location = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (location.hash) {
+      setTimeout(() => {
+        const id = location.hash.replace('#', '')
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else {
+      window.scrollTo(0, 0)
+    }
+
     const el = heroRef.current
     if (!el) return
     el.style.opacity = '0'
@@ -132,7 +143,7 @@ export default function QualityExport() {
       el.style.opacity = '1'
       el.style.transform = 'translateY(0)'
     }, 100)
-  }, [])
+  }, [location])
 
   return (
     <div style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#faf7f2', minHeight: '100vh', overflowX: 'hidden' }}>
@@ -196,7 +207,7 @@ export default function QualityExport() {
       {/* ══════════════════════════════════════════════════════
           QUALITY ASSURANCE PROCESS
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#faf7f2', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '4rem 0', background: '#faf7f2', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '40vw', opacity: 0.03, pointerEvents: 'none' }}>
           <img src="/assets/logo (1).svg" className="no-reveal" alt="" style={{ width: '100%' }} />
         </div>
@@ -239,7 +250,7 @@ export default function QualityExport() {
       {/* ══════════════════════════════════════════════════════
           QUALITY CONTROL PARAMETERS
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#1a1008', position: 'relative', color: '#fff' }}>
+      <section style={{ padding: '4rem 0', background: '#1a1008', position: 'relative', color: '#fff' }}>
         <div style={{ position: 'absolute', right: 0, top: '10%', bottom: 0, width: '50%', background: 'radial-gradient(circle at center, rgba(218,121,39,0.15) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -280,7 +291,7 @@ export default function QualityExport() {
       {/* ══════════════════════════════════════════════════════
           GROUND ZERO INSPECTION
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#faf7f2' }}>
+      <section style={{ padding: '4rem 0', background: '#faf7f2' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '5rem', alignItems: 'center' }}>
             <div style={{ position: 'relative' }}>
@@ -350,7 +361,7 @@ export default function QualityExport() {
       {/* ══════════════════════════════════════════════════════
           EXPORT EXCELLENCE
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#fff' }}>
+      <section id="export-excellence" style={{ padding: '4rem 0', background: '#fff' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#1a1008', marginBottom: '1.5rem' }}>
@@ -417,7 +428,7 @@ export default function QualityExport() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg, #DA7927, #ECA12C)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '4rem 2rem', background: 'linear-gradient(135deg, #DA7927, #ECA12C)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '250px', height: '250px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)' }} />
         <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '300px', height: '300px', borderRadius: '50%', background: 'rgba(255,255,255,0.06)' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '700px', margin: '0 auto' }}>

@@ -42,7 +42,7 @@ export default function Villages() {
 
   return (
     <section style={{
-      padding: '6rem 0',
+      padding: '4rem 0 6rem',
       background: 'linear-gradient(135deg, #0d1440 0%, #1a0a02 100%)',
       position: 'relative',
       overflow: 'hidden',

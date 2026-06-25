@@ -35,7 +35,7 @@ export default function LatestArticles({ title = "Polisetty in action" }) {
   }, [])
 
   return (
-    <section style={{ padding: '6rem 0', background: '#faf7f2' }}>
+    <section style={{ padding: '4rem 0 3rem', background: '#faf7f2' }}>
       <div
         ref={ref}
         style={{

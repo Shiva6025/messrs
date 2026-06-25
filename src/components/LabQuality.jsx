@@ -223,7 +223,7 @@ export default function LabQuality() {
 
       {/* Slide 1 — World map: We export to 56 countries */}
       <section style={{
-        padding: '5rem 0',
+        padding: '2rem 0 5rem',
         background: '#FAFAF5',
         position: 'relative',
         overflow: 'hidden',
@@ -312,7 +312,7 @@ export default function LabQuality() {
 
       {/* Slide 2 — AP/India map: Sources of Green Tobacco */}
       <section style={{
-        padding: '5rem 0',
+        padding: '2rem 0 5rem',
         background: '#fff',
         position: 'relative',
         overflow: 'hidden',

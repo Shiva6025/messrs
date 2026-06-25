@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -31,9 +32,19 @@ const TECH_IMPACT = [
 
 export default function Sustainability() {
   const heroRef = useRef(null)
+  const location = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (location.hash) {
+      setTimeout(() => {
+        const id = location.hash.replace('#', '')
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else {
+      window.scrollTo(0, 0)
+    }
+
     const el = heroRef.current
     if (!el) return
     el.style.opacity = '0'
@@ -43,7 +54,7 @@ export default function Sustainability() {
       el.style.opacity = '1'
       el.style.transform = 'translateY(0)'
     }, 100)
-  }, [])
+  }, [location])
 
   return (
     <div style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#faf7f2', minHeight: '100vh', overflowX: 'hidden' }}>
@@ -98,7 +109,7 @@ export default function Sustainability() {
       {/* ══════════════════════════════════════════════════════
           SUSTAINABLE VALUE CREATION
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#faf7f2' }}>
+      <section style={{ padding: '4rem 0', background: '#faf7f2' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
@@ -133,9 +144,9 @@ export default function Sustainability() {
       {/* ══════════════════════════════════════════════════════
           TECHNOLOGY FOR A POSITIVE IMPACT
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#fff', borderTop: '1px solid rgba(26,16,8,0.05)' }}>
+      <section style={{ padding: '4rem 0', background: '#fff', borderTop: '1px solid rgba(26,16,8,0.05)' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#1a1008', marginBottom: '1.5rem' }}>
               Technology for a <span style={{ color: '#DA7927' }}>positive impact</span>
             </h2>
@@ -180,9 +191,9 @@ export default function Sustainability() {
       {/* ══════════════════════════════════════════════════════
           PEOPLE, PLANET, PURPOSE (ALTERNATING BLOCKS)
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#faf7f2' }}>
+      <section style={{ padding: '4rem 0', background: '#faf7f2' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 800, color: '#1a1008', marginBottom: '1.5rem' }}>
               People, Planet, <span style={{ color: '#DA7927' }}>Purpose</span>
             </h2>
@@ -191,7 +202,7 @@ export default function Sustainability() {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
 
             {/* 1. Environment */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
@@ -306,7 +317,7 @@ export default function Sustainability() {
       {/* ══════════════════════════════════════════════════════
           HARNESSING GREEN POWER (DARK)
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#1a1008', color: '#fff' }}>
+      <section id="green-power" style={{ padding: '4rem 0', background: '#1a1008', color: '#fff' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 800, color: '#fff', marginBottom: '1.5rem' }}>
@@ -359,7 +370,7 @@ export default function Sustainability() {
       {/* ══════════════════════════════════════════════════════
           SUSTAINABILITY RESOURCES
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0', background: '#faf7f2' }}>
+      <section id="resources" style={{ padding: '4rem 0', background: '#faf7f2' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#1a1008', marginBottom: '1.5rem', maxWidth: '800px', lineHeight: 1.1 }}>
             Sustainability Resources
@@ -403,7 +414,7 @@ export default function Sustainability() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg, #DA7927, #ECA12C)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '4rem 2rem', background: 'linear-gradient(135deg, #DA7927, #ECA12C)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '250px', height: '250px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)' }} />
         <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '300px', height: '300px', borderRadius: '50%', background: 'rgba(255,255,255,0.06)' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '700px', margin: '0 auto' }}>

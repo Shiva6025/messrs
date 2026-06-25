@@ -51,7 +51,7 @@ export default function Policies() {
           position: 'absolute', inset: 0,
           background: 'linear-gradient(to right, rgba(26,16,8,0.95) 0%, rgba(26,16,8,0.7) 50%, rgba(26,16,8,0.2) 100%)',
         }} />
-        
+
         <div ref={heroRef} style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1, width: '100%', paddingTop: '100px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
             <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, transparent, #DA7927)' }} />
@@ -65,7 +65,7 @@ export default function Policies() {
           }}>
             Our <span style={{ color: '#DA7927', fontStyle: 'italic', textTransform: 'uppercase' }}>Policies</span>
           </h1>
-          
+
           <div style={{ display: 'flex', gap: '3rem', marginTop: '4rem', flexWrap: 'wrap' }}>
             {['Environment', 'Sustainability', 'Governance'].map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -82,10 +82,10 @@ export default function Policies() {
       {/* ══════════════════════════════════════════════════════
           POLICIES GRID
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '8rem 0 10rem', background: '#faf7f2' }}>
+      <section style={{ padding: '4rem 0 4rem', background: '#faf7f2' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          
-          <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
+
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#1a1008', marginBottom: '1.5rem' }}>
               Explore our <span style={{ color: '#DA7927' }}>policies</span>
             </h2>
@@ -100,20 +100,20 @@ export default function Policies() {
                 display: 'flex', flexDirection: 'column', cursor: 'pointer', border: '1px solid rgba(26,16,8,0.02)',
                 position: 'relative', overflow: 'hidden'
               }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-10px)'
-                e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.08)'
-                const iconBg = e.currentTarget.querySelector('.icon-bg')
-                if (iconBg) iconBg.style.transform = 'scale(1.2)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.04)'
-                const iconBg = e.currentTarget.querySelector('.icon-bg')
-                if (iconBg) iconBg.style.transform = 'scale(1)'
-              }}>
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = 'translateY(-10px)'
+                  e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.08)'
+                  const iconBg = e.currentTarget.querySelector('.icon-bg')
+                  if (iconBg) iconBg.style.transform = 'scale(1.2)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.04)'
+                  const iconBg = e.currentTarget.querySelector('.icon-bg')
+                  if (iconBg) iconBg.style.transform = 'scale(1)'
+                }}>
                 <div style={{ position: 'absolute', top: 0, right: 0, width: '150px', height: '150px', background: 'linear-gradient(135deg, rgba(218,121,39,0.05), transparent)', borderRadius: '0 24px 0 150px' }} />
-                
+
                 <div className="icon-bg" style={{
                   width: '70px', height: '70px', borderRadius: '50%', background: 'linear-gradient(135deg, #DA7927, #ECA12C)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem',
@@ -123,17 +123,17 @@ export default function Policies() {
                     <path d={policy.icon} />
                   </svg>
                 </div>
-                
+
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', fontWeight: 800, color: '#1a1008', marginBottom: '1.5rem', lineHeight: 1.3, flexGrow: 1, position: 'relative', zIndex: 1 }}>
                   {policy.title}
                 </h3>
-                
-                <a href="#" style={{ 
+
+                <a href="#" style={{
                   color: '#6b5a4a', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem',
                   transition: 'color 0.3s', position: 'relative', zIndex: 1
                 }}
-                onMouseEnter={e => e.currentTarget.style.color = '#DA7927'}
-                onMouseLeave={e => e.currentTarget.style.color = '#6b5a4a'}>
+                  onMouseEnter={e => e.currentTarget.style.color = '#DA7927'}
+                  onMouseLeave={e => e.currentTarget.style.color = '#6b5a4a'}>
                   Download PDF
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 </a>
@@ -144,7 +144,7 @@ export default function Policies() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg, #1a1008, #2a1f16)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '4rem 2rem', background: 'linear-gradient(135deg, #1a1008, #2a1f16)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '250px', height: '250px', borderRadius: '50%', background: 'rgba(218,121,39,0.05)' }} />
         <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '300px', height: '300px', borderRadius: '50%', background: 'rgba(218,121,39,0.03)' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '700px', margin: '0 auto' }}>

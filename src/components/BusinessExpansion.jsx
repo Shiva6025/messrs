@@ -63,7 +63,7 @@ function ExpansionBanner({ item, index }) {
       <div
         ref={ref}
         style={{
-          maxWidth: '1280px', margin: '0 auto', padding: '6rem 2rem',
+          maxWidth: '1280px', margin: '0 auto', padding: '4rem 2rem',
           position: 'relative', zIndex: 1, width: '100%',
           opacity: 0, transform: 'translateY(30px)',
           transition: 'opacity 0.9s ease, transform 0.9s ease',
@@ -109,7 +109,7 @@ export default function BusinessExpansion() {
   return (
     <div style={{ background: '#faf7f2' }}>
       {/* Intro Header Section */}
-      <section style={{ padding: '6rem 0 3rem 0', textAlign: 'center' }}>
+      <section style={{ padding: '3rem 0', textAlign: 'center' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1rem' }}>
             <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, transparent, #DA7927)' }} />

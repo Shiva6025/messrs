@@ -23,6 +23,9 @@ import Initiatives from './pages/Initiatives'
 import Sustainability from './pages/Sustainability'
 import Blogs from './pages/Blogs'
 import Policies from './pages/Policies'
+import Reports from './pages/Reports'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import Sitemap from './pages/Sitemap'
 import ContactModal from './components/ContactModal'
 
 /* ── Home page (unchanged) ─────────────────────────────────────── */
@@ -116,6 +119,9 @@ function App() {
         <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/policies" element={<Policies />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/sitemap" element={<Sitemap />} />
       </Routes>
       <ContactModal isOpen={isContactModalOpen} onClose={() => setContactModalOpen(false)} />
       <button 

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -53,6 +54,7 @@ const BLOGS = [
 export default function Blogs() {
   const [activeCategory, setActiveCategory] = useState('All')
   const heroRef = useRef(null)
+  const location = useLocation()
 
   const filteredBlogs = activeCategory === 'All'
     ? BLOGS.filter(b => !b.featured) // Show all non-featured in grid
@@ -61,7 +63,16 @@ export default function Blogs() {
   const featuredBlog = BLOGS.find(b => b.featured)
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (location.hash) {
+      setTimeout(() => {
+        const id = location.hash.replace('#', '')
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else {
+      window.scrollTo(0, 0)
+    }
+
     const el = heroRef.current
     if (!el) return
     el.style.opacity = '0'
@@ -71,7 +82,7 @@ export default function Blogs() {
       el.style.opacity = '1'
       el.style.transform = 'translateY(0)'
     }, 100)
-  }, [])
+  }, [location])
 
   return (
     <div style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#faf7f2', minHeight: '100vh', overflowX: 'hidden' }}>
@@ -80,7 +91,7 @@ export default function Blogs() {
       {/* ══════════════════════════════════════════════════════
           HERO / FEATURED BLOG
           ══════════════════════════════════════════════════════ */}
-      <section style={{ position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'flex-end' }}>
+      <section id={featuredBlog.id === 1 ? 'data-smart' : (featuredBlog.id === 2 ? 'operational-risk' : undefined)} style={{ position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'flex-end' }}>
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: `url(${featuredBlog.image})`,
@@ -155,8 +166,8 @@ export default function Blogs() {
 
           {/* Filters */}
           <div style={{
-            display: 'flex', gap: '1rem', marginBottom: '4rem', flexWrap: 'wrap',
-            paddingBottom: '2rem', borderBottom: '1px solid rgba(26,16,8,0.1)'
+            display: 'flex', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap',
+            paddingBottom: '2rem'
           }}>
             {CATEGORIES.map(cat => (
               <button
@@ -184,7 +195,7 @@ export default function Blogs() {
           {filteredBlogs.length > 0 ? (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '3rem' }}>
               {filteredBlogs.map(blog => (
-                <div key={blog.id} style={{
+                <div key={blog.id} id={blog.id === 1 ? 'data-smart' : (blog.id === 2 ? 'operational-risk' : undefined)} style={{
                   background: '#fff', borderRadius: '24px', overflow: 'hidden',
                   boxShadow: '0 15px 40px rgba(0,0,0,0.04)', transition: 'transform 0.4s ease, box-shadow 0.4s ease',
                   display: 'flex', flexDirection: 'column', cursor: 'pointer', border: '1px solid rgba(26,16,8,0.02)'
@@ -239,7 +250,7 @@ export default function Blogs() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg, #1a1008, #2a1f16)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '4rem 2rem', background: 'linear-gradient(135deg, #1a1008, #2a1f16)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '250px', height: '250px', borderRadius: '50%', background: 'rgba(218,121,39,0.05)' }} />
         <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '300px', height: '300px', borderRadius: '50%', background: 'rgba(218,121,39,0.03)' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '700px', margin: '0 auto' }}>

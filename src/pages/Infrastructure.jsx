@@ -664,10 +664,10 @@ export default function Infrastructure() {
       {/* ══════════════════════════════════════════════════════
           PROCESSING CAPABILITIES — alternating layout
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '6rem 0 1rem', background: '#fff', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '3rem 0 1rem', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         {/* Decorative watermark */}
         <div style={{
-          position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+          position: 'absolute', top: '59%', left: '50%', transform: 'translate(-50%, -50%)',
           fontFamily: "'Playfair Display', serif", fontSize: '18vw', fontWeight: 900,
           color: 'rgba(218,121,39,0.04)', whiteSpace: 'nowrap', pointerEvents: 'none', userSelect: 'none',
         }}>
@@ -706,12 +706,12 @@ export default function Infrastructure() {
       {/* ══════════════════════════════════════════════════════
           TECHNOLOGY GALLERY — 3-col grid
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '6rem 0', background: '#faf7f2', position: 'relative' }}>
+      <section style={{ padding: '3rem 0', background: '#faf7f2', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(218,121,39,0.3), transparent)' }} />
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div
             ref={techHeadRef}
-            style={{ textAlign: 'center', marginBottom: '4.5rem', opacity: 0, transform: 'translateY(30px) scale(1)', transition: 'opacity 0.9s ease, transform 0.9s ease' }}
+            style={{ textAlign: 'center', marginBottom: '2.5rem', opacity: 0, transform: 'translateY(30px) scale(1)', transition: 'opacity 0.9s ease, transform 0.9s ease' }}
           >
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
               <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, transparent, #DA7927)' }} />
@@ -775,7 +775,7 @@ export default function Infrastructure() {
       {/* ══════════════════════════════════════════════════════
           SORTING TECHNOLOGY BANNER
           ══════════════════════════════════════════════════════ */}
-      <section style={{ padding: '6rem 0', background: '#fff', position: 'relative' }}>
+      <section style={{ padding: '4rem 0 6rem', background: '#fff', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(218,121,39,0.35), transparent)' }} />
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>

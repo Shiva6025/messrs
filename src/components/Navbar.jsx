@@ -13,7 +13,10 @@ export default function Navbar() {
   const isSust = location.pathname === '/sustainability'
   const isBlogs = location.pathname === '/blogs'
   const isPolicies = location.pathname === '/policies'
-  const isSubPage = isAbout || isInfra || isQuality || isInit || isSust || isBlogs || isPolicies
+  const isReports = location.pathname === '/reports'
+  const isPrivacy = location.pathname === '/privacy-policy'
+  const isSitemap = location.pathname === '/sitemap'
+  const isSubPage = isAbout || isInfra || isQuality || isInit || isSust || isBlogs || isPolicies || isReports || isPrivacy || isSitemap
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)

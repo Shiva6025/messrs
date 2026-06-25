@@ -23,7 +23,7 @@ export default function LocationMap() {
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`
 
   return (
-    <section style={{ padding: '5rem 0', background: '#faf7f2', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ padding: '3rem 0 2rem', background: '#faf7f2', position: 'relative', overflow: 'hidden' }}>
       {/* Top rule */}
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(218,121,39,0.3), transparent)' }} />
 

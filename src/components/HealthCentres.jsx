@@ -50,7 +50,7 @@ export default function HealthCentres() {
   }, [])
 
   return (
-    <section style={{ padding: '6rem 0', background: '#faf7f2' }}>
+    <section style={{ padding: '3rem 0 0rem', background: '#faf7f2' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
         <div
           ref={ref}

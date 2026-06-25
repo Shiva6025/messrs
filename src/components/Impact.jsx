@@ -124,7 +124,7 @@ export default function Impact() {
       id="impact"
       style={{
         position: 'relative',
-        padding: '7rem 0',
+        padding: '5rem 0 7rem',
         overflow: 'hidden',
         background: 'linear-gradient(135deg, #1a0a02 0%, #2d1a08 40%, #0d1440 100%)',
       }}
@@ -246,7 +246,7 @@ export default function Impact() {
           >
             Explore Our Infrastructure
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
         </div>
