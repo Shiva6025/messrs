@@ -126,7 +126,7 @@ function TimelineCard({ milestone, index }) {
               transition: `opacity 0.7s ease ${index * 80}ms, transform 0.7s ease ${index * 80}ms`,
             }}
           >
-            <div style={{ color: milestone.color, fontSize: '1.5rem', fontFamily: "'Playfair Display', serif", fontWeight: 800, marginBottom: '0.25rem' }}>
+            <div className="num-font" style={{ color: milestone.color, fontSize: '1.5rem', fontFamily: "'Oswald', sans-serif", fontWeight: 700, marginBottom: '0.25rem' }}>
               {milestone.year}
             </div>
             <div style={{ fontWeight: 700, color: '#1a1008', fontSize: '1rem', marginBottom: '0.5rem' }}>{milestone.title}</div>
@@ -166,7 +166,7 @@ function TimelineCard({ milestone, index }) {
               transition: `opacity 0.7s ease ${index * 80}ms, transform 0.7s ease ${index * 80}ms`,
             }}
           >
-            <div style={{ color: milestone.color, fontSize: '1.5rem', fontFamily: "'Playfair Display', serif", fontWeight: 800, marginBottom: '0.25rem' }}>
+            <div className="num-font" style={{ color: milestone.color, fontSize: '1.5rem', fontFamily: "'Oswald', sans-serif", fontWeight: 700, marginBottom: '0.25rem' }}>
               {milestone.year}
             </div>
             <div style={{ fontWeight: 700, color: '#1a1008', fontSize: '1rem', marginBottom: '0.5rem' }}>{milestone.title}</div>
@@ -401,7 +401,8 @@ export default function AboutUs() {
               marginBottom: '1.5rem'
             }}>
               Since{' '}
-              <span style={{
+              <span className="num-font" style={{
+                fontFamily: "'Oswald', sans-serif",
                 background: 'linear-gradient(90deg, #DA7927, #ECA12C)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
               }}>
@@ -488,10 +489,10 @@ export default function AboutUs() {
                 { value: '2', label: 'Processing Plants' }
               ].map((stat, i) => (
                 <div key={i}>
-                  <div style={{
-                    fontFamily: "'Playfair Display', serif",
+                  <div className="num-font" style={{
+                    fontFamily: "'Oswald', sans-serif",
                     fontSize: '2.5rem',
-                    fontWeight: 800,
+                    fontWeight: 700,
                     color: '#DA7927',
                     marginBottom: '0.5rem'
                   }}>
