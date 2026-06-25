@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 const heroBg = '/assets/PHOTO-2023-11-29-17-14-40-e1706867387348.webp'
 const familyImg = '/assets/slide1-fam1.webp'
-const banLogo = '/assets/ban-logo.webp'
+const banLogo = '/assets/ban-logo.png'
 
 export default function Hero() {
   const textRef = useRef(null)
@@ -220,10 +220,10 @@ export default function Hero() {
             alt="Best Exporter Award – Non-manufacturer segment, 15 years"
             style={{
               position: 'absolute',
-              top: '-19rem',
-              right: '6rem',
-              width: '150px',
-              height: '150px',
+              top: '-17rem',
+              right: '14rem',
+              width: '280px',
+              height: '280px',
               objectFit: 'contain',
               zIndex: 2,
               animation: 'float 5s ease-in-out infinite',

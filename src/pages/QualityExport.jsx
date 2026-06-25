@@ -68,53 +68,53 @@ const PROCESS_TABS = [
 
 /* ── Export Products Data ─────────────────────────────────────── */
 const EXPORT_PRODUCTS = [
-  { 
-    image: ASSETS.tb1_1, 
-    title: 'FCV Traditional (TRDL) , Andhra Pradesh', 
+  {
+    image: ASSETS.tb1_1,
+    title: 'FCV Traditional (TRDL) , Andhra Pradesh',
     marketingSeason: 'February to August',
     physicalFeatures: 'Lemon to Lemon orange, thin to medium bodied, mature to ripe',
-    keyFeatures: 'Dependable source of coloury filler tobaccos. Grown under rain fed condition.', 
-    chemical: 'Nicotine: 1.8 to 3.5% | Sugar: 8 to 20 %' 
+    keyFeatures: 'Dependable source of coloury filler tobaccos. Grown under rain fed condition.',
+    chemical: 'Nicotine: 1.8 to 3.5% | Sugar: 8 to 20 %'
   },
-  { 
-    image: ASSETS.tb3, 
-    title: 'Air cured: Vinukonda Burley (VB), Andhra Pradesh', 
+  {
+    image: ASSETS.tb3,
+    title: 'Air cured: Vinukonda Burley (VB), Andhra Pradesh',
     marketingSeason: 'January to March',
     physicalFeatures: 'Buff to light tan, thin to medium bodied',
-    keyFeatures: 'Crop a kin to Malawi & Mozambique', 
-    chemical: 'Nicotine: 1.8-3% | Sugar: 2-3%' 
+    keyFeatures: 'Crop a kin to Malawi & Mozambique',
+    chemical: 'Nicotine: 1.8-3% | Sugar: 2-3%'
   },
-  { 
-    image: ASSETS.tb4, 
-    title: 'SUN CURED: (HDBRG), Andhra Pradesh', 
+  {
+    image: ASSETS.tb4,
+    title: 'SUN CURED: (HDBRG), Andhra Pradesh',
     marketingSeason: 'February to May',
     physicalFeatures: 'Dark tan, medium to heavy bodied with sun cured note',
-    keyFeatures: 'Crop with unique taste, Cheap substitute for Burley', 
-    chemical: 'Nicotine: 1.5 to 3% | Sugar: 2 to 3%' 
+    keyFeatures: 'Crop with unique taste, Cheap substitute for Burley',
+    chemical: 'Nicotine: 1.5 to 3% | Sugar: 2 to 3%'
   },
-  { 
-    image: ASSETS.tb5, 
-    title: 'Fire Cured: Dark Fire Cured (DFC), Telengana', 
+  {
+    image: ASSETS.tb5,
+    title: 'Fire Cured: Dark Fire Cured (DFC), Telangana',
     marketingSeason: 'April to May',
     physicalFeatures: 'Deep tan fermented, lustrous, heavy bodied',
-    keyFeatures: 'Well suited for moist snus, shisha and RYO', 
-    chemical: 'Nicotine: 2.5 to 3.5% | Sugars: 4 to 5%' 
+    keyFeatures: 'Well suited for moist snus, shisha and RYO',
+    chemical: 'Nicotine: 2.5 to 3.5% | Sugars: 4 to 5%'
   },
-  { 
-    image: ASSETS.tb1, 
-    title: 'FCV Karnataka Light Soil, Mysore', 
+  {
+    image: ASSETS.tb1,
+    title: 'FCV Karnataka Light Soil, Mysore',
     marketingSeason: 'September to March',
     physicalFeatures: 'Thin bodied, ripe, lemon to orange color',
-    keyFeatures: 'Grown in light soils, under well distributed rainfall. Preferred source of premium filler in the world. Natural neutral filler.', 
-    chemical: 'Nicotine: 1.0 to 2.0% | Sugar: 10 to 23%' 
+    keyFeatures: 'Grown in light soils, under well distributed rainfall. Preferred source of premium filler in the world. Natural neutral filler.',
+    chemical: 'Nicotine: 1.0 to 2.0% | Sugar: 10 to 23%'
   },
-  { 
-    image: ASSETS.tb2_1, 
-    title: 'FCV: Northern Light Soil (NLS), Andhra Pradesh', 
+  {
+    image: ASSETS.tb2_1,
+    title: 'FCV: Northern Light Soil (NLS), Andhra Pradesh',
     marketingSeason: 'March to August',
     physicalFeatures: 'Heavy bodied, oily lustrous, ripe styles',
-    keyFeatures: 'Grown in sandy loam soils under irrigated conditions. Flavour option from India.', 
-    chemical: 'Nicotine: 2.0 to 4% | Sugar: 7 to 18%' 
+    keyFeatures: 'Grown in sandy loam soils under irrigated conditions. Flavour option from India.',
+    chemical: 'Nicotine: 2.0 to 4% | Sugar: 7 to 18%'
   },
 ]
 
@@ -152,7 +152,7 @@ export default function QualityExport() {
           position: 'absolute', inset: 0,
           background: 'linear-gradient(to bottom, rgba(20,20,20,0.85) 0%, rgba(20,20,20,0.5) 100%)',
         }} />
-        <div ref={heroRef} style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1, width: '100%', paddingTop: '100px' }}>
+        <div ref={heroRef} style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1, width: '100%', paddingTop: '100px', paddingBottom: '100px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
             <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, transparent, #DA7927)' }} />
             <span style={{ color: '#DA7927', fontSize: '0.85rem', letterSpacing: '0.2em', fontWeight: 600, textTransform: 'uppercase' }}>In every product</span>

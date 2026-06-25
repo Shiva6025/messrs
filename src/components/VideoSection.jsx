@@ -6,17 +6,41 @@ export default function VideoSection() {
   const sectionRef = useRef(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const fadeObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          sectionRef.current.style.opacity = '1'
-          sectionRef.current.style.transform = 'translateY(0)'
+          if (sectionRef.current) {
+            sectionRef.current.style.opacity = '1'
+            sectionRef.current.style.transform = 'translateY(0)'
+          }
         }
       },
       { threshold: 0.1 }
     )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
+    if (sectionRef.current) fadeObserver.observe(sectionRef.current)
+
+    const videoObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (videoRef.current) {
+            videoRef.current.play().catch(e => console.log('Autoplay prevented:', e))
+            setPlaying(true)
+          }
+        } else {
+          if (videoRef.current) {
+            videoRef.current.pause()
+            setPlaying(false)
+          }
+        }
+      },
+      { threshold: 0.5 }
+    )
+    if (videoRef.current) videoObserver.observe(videoRef.current)
+
+    return () => {
+      fadeObserver.disconnect()
+      videoObserver.disconnect()
+    }
   }, [])
 
   const handlePlay = () => {
@@ -55,14 +79,6 @@ export default function VideoSection() {
               </span>
               <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, #DA7927, transparent)' }} />
             </div>
-            {/* <h2 style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(1.8rem, 3vw, 2.75rem)',
-              fontWeight: 800,
-              color: '#1a1008',
-            }}>
-              See the Legacy in Motion
-            </h2> */}
           </div>
 
           {/* Video container */}
@@ -87,6 +103,7 @@ export default function VideoSection() {
                 objectFit: 'cover',
               }}
               loop
+              muted
               playsInline
             />
 
